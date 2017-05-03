@@ -27,23 +27,23 @@
 
         <div class="keys">
             <span class="key clear">c</span>
-           <span class="key operator multiply">&times;</span>
+           <span class="key operator multiply">x</span>
 
             <span class="key number seven">7</span>
             <span class="key number eight">8</span>
             <span class="key number nine">9</span>
-            <span class="key operator divide">&divide;</span>
+            <span class="key operator divide">/</span>
 
             <span class="key number four">4</span>
             <span class="key number five">5</span>
             <span class="key number six">6</span>
-            <span class="key operator plus">&plus;</span>
+            <span class="key operator plus">+</span>
             
 
             <span class="key number one">1</span>
             <span class="key number two">2</span>
             <span class="key number three">3</span>
-            <span class="key operator minus">&minus;</span>
+            <span class="key operator minus">-</span>
 
             <span class="key number zero">0</span>
             <span class="key number decimal">.</span>
@@ -53,7 +53,62 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
+      $(document).ready(function() {
+          var number = "";
+          var keyNumber;
+          var operator;
+          var num1;
+          var num2;
+          var answer;
 
+          
+          function doMath(num1, num2) {
+            console.log(num1, num2);
+                if (operator == "+") { // works
+                  console.log("add");
+                    answer = Number(num1) + Number(num2);
+                    return answer;
+                } else if (operator == "-") {
+                  console.log("subtract");
+                    answer = Number(num1) - Number(num2);
+                    return answer;
+                } else if (operator == "x") {
+                  console.log("multiply");
+                    answer = Number(num1) * Number(num2);
+                    return answer;
+                } else if (operator == "/") {
+                  console.log("divide");
+                    answer = Number(num1) / Number(num2);
+                    return answer;
+                }
+            }
+
+           $('.number').click(function() {
+                keyNumber = $(this).html(); // get number of key pressed
+                number += keyNumber; // add number pressed to numbers pressed prior
+                $('.screen').html(number); // change screen value to match numbers pressed
+            });
+
+            $(".operator").click(function() {
+                operator = $(this).html(); // set operator variable to operorator key that was pressed
+                num1 = number; // set the first number to the final number value
+                number = ""; // reset number to empty string
+                console.log("operator = " + operator);
+            });
+
+            $(".equals").click(function() {
+                num2 = number; // set second number to final value
+                doMath(num1, num2); // run do math function with the two numbers obtained
+                $('.screen').html(answer); // change the screen to he answer returned from doMath function
+            });
+
+            $(".clear").click(function() {
+                number = ""; // reset the number variable
+                $('.screen').html("0"); // clear screen value
+            });
+
+
+      });// end document.ready function
     </script>
   </body>
 </html>
