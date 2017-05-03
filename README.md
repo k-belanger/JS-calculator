@@ -10,7 +10,7 @@ Using test driven development, implement a single calculator object that does: m
 - includes working UI (open calculator.html in a browser)
 
 
-Limitations and Bugs at this time:
+## Limitations and Bugs at this time:
 - it only can perform exquations in the following format: number operator number = answer. 
     - Examples:
         - 205 + 1005 = 1210
@@ -19,7 +19,7 @@ Limitations and Bugs at this time:
 
 
 
-Next Steps I would have taken:
+## Next Steps I would have taken:
 - rework calculator function so it could take multiple numbers and operators
 - decrease font size of screen numbers if they were over a certain character limit, and/or display and Err if the number was too long for the screen.
 
