@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        * {box-sizing:border-box; margin:0; padding:0;}
+        .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+        .calculator {width:380px; background-color:grey;font:42px Helvetica, Arial, sans-serif; margin:100px 100px; padding:20px;}
+        .screen {height:70px; background-color:#fff; margin:5px 5px 15px 5px; box-shadow:inset 0 0 5px rgba(0,0,0,0.5); border:1px solid #333; text-align:right; font-size:50px; padding:5px 15px;}
+        .keys {display:flex; justify-content:space-between; flex-wrap:wrap; }
+        .key {float:left; display:block; width:75px; height:75px; margin:5px 5px; text-align: center; line-height:78px; box-shadow:2px 2px 1px rgba(0,0,0,0.75);}
+        .zero {flex:2;}
+        .key:hover {cursor:pointer;}
+        .key:active {box-shadow:none;}
+        .key.operator {background-color:#F2BC81;}
+        .key.number {background-color:#fff;}
+        .key.clear {background-color:#E05229; width:245px;}
+        .key.equals {background-color:#5586d6;}
+    </style>
+  </head>
+
+  <body>
+      
+    <div class="calculator">
+        <div class="screen">0</div>
+
+        <div class="keys">
+            <span class="key clear">c</span>
+           <span class="key operator multiply">&times;</span>
+
+            <span class="key number seven">7</span>
+            <span class="key number eight">8</span>
+            <span class="key number nine">9</span>
+            <span class="key operator divide">&divide;</span>
+
+            <span class="key number four">4</span>
+            <span class="key number five">5</span>
+            <span class="key number six">6</span>
+            <span class="key operator plus">&plus;</span>
+            
+
+            <span class="key number one">1</span>
+            <span class="key number two">2</span>
+            <span class="key number three">3</span>
+            <span class="key operator minus">&minus;</span>
+
+            <span class="key number zero">0</span>
+            <span class="key number decimal">.</span>
+            <span class="key equals">&equals;</span>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+
+    </script>
+  </body>
+</html>
